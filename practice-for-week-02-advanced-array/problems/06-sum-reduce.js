@@ -12,9 +12,20 @@ console.log(sumWithReduce([])); // 0
 
 */
 
-let sumWithReduce = function(nums) {
-  // Your code here
+let sumWithReduce = function (nums) {
+  if (nums.length === 0) {
+    console.log(0);
+  }
+  else {
+    let sum = nums.reduce((accum, num) => {
+      return accum + num;
+    });
+    console.log(sum);
+  }
 };
+
+sumWithReduce([10, 3, 5, 2]); // 20
+sumWithReduce([]); // 0
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
