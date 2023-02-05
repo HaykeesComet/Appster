@@ -38,16 +38,14 @@ console.log(result6);   // true
 *******************************************************************************/
 
 function one(array, cb) {
-  let boolCount = 0;
-  let bool = [];
-  for (let i = 0; i < array.length; i++) {
-    if (cb(array[i], i === true)) {
-      boolCount++;
-    }
-    if (boolCount >= 1) {
-      return true;
-    }
-  }
+  let count = 0;
+
+  // array.forEach(el => cb(el, i) ? '' : count++)
+  array.forEach((element, i) => {
+    if (cb(element, i)) count++
+  });
+
+  return count === 1;
 }
 
 let result1 = one(['x', 'y', 'z'], function (el) {

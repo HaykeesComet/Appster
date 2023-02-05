@@ -43,13 +43,15 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 *******************************************************************************/
 
 function selectiveMap(array, selector, mapper) {
-    let mapArr = [];
+    let selected = []
     for (let i = 0; i < array.length; i++) {
         if (selector(array[i])) {
-            mapArr.push(array[i]);
+            selected.push(mapper(array[i]))
+        } else {
+            selected.push(array[i])
         }
     }
-    return mapArr;
+    return selected
 }
 
 function isEven(n) {

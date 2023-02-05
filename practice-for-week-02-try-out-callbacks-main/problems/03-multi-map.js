@@ -22,27 +22,23 @@ console.log(result3); // hi!!!!!
 *******************************************************************************/
 
 function multiMap(val, n, cb) {
-  let ans = '';
   for (let i = 0; i < n; i++) {
-    ans = cb(val);
+    val = cb(val);
   }
-  return ans;
+  console.log(val);
 }
 
 let result1 = multiMap(7, 2, function (n) {
   return n * 10;
-});
-console.log(result1); // 700
+});// 700
 
 let result2 = multiMap(7, 3, function (n) {
   return n * 10;
-});
-console.log(result2); // 7000
+});// 7000
 
 let result3 = multiMap("hi", 5, function (s) {
   return s + "!";
-});
-console.log(result3); // hi!!!!!
+});// hi!!!!!
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {

@@ -34,10 +34,7 @@ console.log(
 let xorSelect = function (array, cb1, cb2) {
   ansArr = [];
   for (let i = 0; i < array.length; i++) {
-    if (cb1(array[i])) {
-      ansArr.push(array[i]);
-    }
-    else if (cb2(array[i])) {
+    if ((cb1(array[i]) && !cb2(array[i])) || (!cb1(array[i]) && cb2(array[i]))) {
       ansArr.push(array[i]);
     }
   }
